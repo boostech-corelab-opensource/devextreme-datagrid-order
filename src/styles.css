@@ -1,0 +1,262 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2933;
+  background-color: #f5f7fa;
+  line-height: 1.6;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.datagrid-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+}
+
+.datagrid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.datagrid-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.datagrid-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.help-toggle {
+  border: none;
+  border-radius: 6px;
+  background-color: #1f2933;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.help-toggle:hover {
+  background-color: #111827;
+  transform: translateY(-1px);
+}
+
+.help-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+
+.help-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.4);
+}
+
+.help-drawer {
+  position: relative;
+  width: min(480px, 92vw);
+  max-width: 540px;
+  height: 100%;
+  background-color: #fdfdfd;
+  box-shadow: -12px 0 32px rgba(15, 23, 42, 0.18);
+  display: flex;
+  flex-direction: column;
+  animation: help-slide-in 0.35s ease forwards;
+}
+
+.help-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 60%);
+}
+
+.help-drawer-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.help-close {
+  border: none;
+  background: none;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #475569;
+  padding: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.help-close:hover {
+  color: #1f2937;
+  transform: scale(1.1);
+}
+
+.help-drawer-body {
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+  background-color: #ffffff;
+}
+
+.help-content h1,
+.help-content h2,
+.help-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.help-content h1:first-child {
+  margin-top: 0;
+}
+
+.help-content p {
+  margin: 0.6rem 0;
+  color: #1f2933;
+}
+
+.help-content ul,
+.help-content ol {
+  padding-left: 1.2rem;
+  margin: 0.6rem 0;
+}
+
+.help-content li {
+  margin-bottom: 0.35rem;
+}
+
+.help-content hr {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 1.5rem 0;
+}
+
+.help-content code {
+  background-color: #f1f5f9;
+  border-radius: 4px;
+  padding: 0.15rem 0.35rem;
+  font-size: 0.9rem;
+}
+
+.help-drawer-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.help-dismiss {
+  border: none;
+  border-radius: 6px;
+  background-color: #1f2933;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.help-dismiss:hover {
+  background-color: #111827;
+  transform: translateY(-1px);
+}
+
+ .help-content pre {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 0.9rem 0;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+
+.help-content pre code {
+  display: block;
+  color: #0f172a;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  white-space: pre;
+}
+
+.guide-section {
+  margin-bottom: 1.75rem;
+}
+
+.guide-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.guide-steps {
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.guide-steps li strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #0f172a;
+}
+
+.guide-steps li p {
+  margin: 0.35rem 0;
+}
+
+.guide-note {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  font-size: 0.9rem;
+}
+
+.guide-checklist {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+@keyframes help-slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
